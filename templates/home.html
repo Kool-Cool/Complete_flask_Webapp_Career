@@ -27,7 +27,16 @@
       </p>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>  
       <p >
-        {{jobs_to_show}}
+        {% for char in jobs_to_show %}
+          <div style="margin-bottom:16px;">
+            <h4 style="color:rgb(120,120,120); margin-bottom:4px;">{{char["title"]}}</h4>
+            <div><b>Location:</b> {{char["location"]}}</div>
+            {% if "salary" in char %}
+            <div><b>Salary:</b> {{char["salary"]}}</div>
+            {% endif %}
+            
+          </div>
+        {% endfor %}
       </p>  
       
       <div class="text-center" >
