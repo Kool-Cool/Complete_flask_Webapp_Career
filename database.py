@@ -7,8 +7,8 @@ from sqlalchemy import text
 # NOTE
 # MAKE sure you have saved data of Connection strings from PLanetScale
 HOST="aws.connect.psdb.cloud"
-USERNAME="bzkm8162ffn8w9l6nayh"
-PASSWORD="pscale_pw_AExTSeyjJ4E9zHSGW4npQdJFVjkYCFjMz5bMU9srrkM"
+USERNAME="e3pbtfpteqe15qe02532"
+PASSWORD="pscale_pw_FtBzlLhx7WFzwFxBayK4AawPQec48e5Iwkq8hWdBeSV"
 DATABASE="joviancareers"
 
 
@@ -46,6 +46,6 @@ def load_jobs_from_db():
     
     jobs = []
     for row in result.all():
-      jobs.append(row._aasdict())
+      jobs.append(row._asdict())
 
     return jobs
