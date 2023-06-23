@@ -38,9 +38,8 @@ def show_job(id):
 def apply_to_job(id):
   # data = request.args # .args get data from url
   data = request.form
-  
-  
-  return jsonify(data)
+  job = load_job_from_db_of_id(id)
+  return render_template("application_submitted.html",application=data , job=job)
 
 
 
