@@ -24,5 +24,12 @@ def list_jobs():
   jobs = load_jobs_from_db()
   return jsonify(jobs)
 
+
+@app.route("/jobs/<id>") #Dynamic route
+def show_job(id):
+  return f"This job number {id}"
+
+
+
 if __name__ == "__main__":
   app.run(host="0.0.0.0",debug=True)

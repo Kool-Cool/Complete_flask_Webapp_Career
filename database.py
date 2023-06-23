@@ -32,7 +32,7 @@ with engine.connect() as conn:
 for row in result.all():
   result_dicts.append(row._asdict())
 
-print(result_dicts)
+# print(result_dicts)
 
 
 # Helper Function
