@@ -7,8 +7,8 @@ print(sqlalchemy.__version__)
 # NOTE
 # MAKE sure you have saved data of Connection strings from PLanetScale
 HOST="aws.connect.psdb.cloud"
-USERNAME="gb1axk01iikbqmzixs5f"
-PASSWORD="pscale_pw_Sq7OnoqjREJ1NZAVeRj1dY2CXpIjjwtIWcsYCSUrpO4"
+USERNAME="jdp6urzhmon7fo28pbhc"
+PASSWORD="pscale_pw_jle0vpsf1XbE8LWvaABLC3TvKDYnbKubkX0RYQlvjoS"
 DATABASE="joviancareers"
 
 
@@ -31,5 +31,8 @@ with engine.connect() as conn:
   result = conn.execute(text(db_query))
 
   result_all = result.all()
-  print(f"Type :{type(result_all)}")
+  # print(f"Type :{type(result_all)}")
   print(f"First Element:{result_all[0]} :+\n: Type:{type(result_all[0])}")
+
+  first_result_dict = result_all[0]._asdict()
+  print(f"checking type whether it is python dict or sql :\n {type(first_result_dict)}")
