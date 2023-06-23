@@ -34,12 +34,11 @@ def show_job(id):
   return render_template("jobpage.html",job=job)
 
 
-@app.route("/job/<id>/apply")
+@app.route("/job/<id>/apply", methods=['post'])
 def apply_to_job(id):
-  data = request.args
-  # store in db  or
-  # display and send acknowledgement   or 
-  # send email "form submited successfully"
+  # data = request.args # .args get data from url
+  data = request.form
+  
   
   return jsonify(data)
 
