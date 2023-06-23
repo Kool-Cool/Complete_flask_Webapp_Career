@@ -1,21 +1,18 @@
 
 from sqlalchemy import create_engine
 from sqlalchemy import text
-
+import os
 # print(sqlalchemy.__version__)
 
 # NOTE
 # MAKE sure you have saved data of Connection strings from PLanetScale
-HOST="aws.connect.psdb.cloud"
-USERNAME="e3pbtfpteqe15qe02532"
-PASSWORD="pscale_pw_FtBzlLhx7WFzwFxBayK4AawPQec48e5Iwkq8hWdBeSV"
-DATABASE="joviancareers"
+
 
 
 
 # For establishing connections between mysql and sqlalchemy
 # engine = create_engine("mysql+pymysql://user:pass@some_mariadb/dbname?charset=utf8mb4")
-db_connection_string = f"mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}?charset=utf8mb4"
+db_connection_string = str(os.environ["DB_CONNECTION_STRING"])
 
 engine = create_engine(db_connection_string ,
                       connect_args={
