@@ -46,3 +46,15 @@ def load_jobs_from_db():
       jobs.append(row._asdict())
 
     return jobs
+
+
+def load_job_from_db_of_id(id):
+  with engine.connect() as conn:
+    query = f"SELECT * FROM jobs WHERE id = {id} "
+    result = conn.execute(text(query))
+    rows = result.all()
+    if len(rows)== 0:
+      return None
+    else:
+      return rows[0]._asdict()
+    

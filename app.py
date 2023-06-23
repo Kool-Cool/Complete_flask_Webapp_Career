@@ -1,6 +1,6 @@
 from flask import Flask 
 from flask import render_template , jsonify
-from database import load_jobs_from_db
+from database import load_jobs_from_db , load_job_from_db_of_id
 
 
 
@@ -25,10 +25,11 @@ def list_jobs():
   return jsonify(jobs)
 
 
-@app.route("/jobs/<id>") #Dynamic route
-def show_job(id):
-  return f"This job number {id}"
 
+@app.route("/job/<id>") #Dynamic route # Kinda REST API (GOES THROUGH DATA AND RETURN JSON FILE)
+def show_job(id):
+  job = load_job_from_db_of_id(id)
+  return jsonify(job)
 
 
 if __name__ == "__main__":
