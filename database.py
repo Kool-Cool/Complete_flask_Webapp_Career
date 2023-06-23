@@ -1,14 +1,14 @@
-import sqlalchemy 
+
 from sqlalchemy import create_engine
 from sqlalchemy import text
 
-print(sqlalchemy.__version__)
+# print(sqlalchemy.__version__)
 
 # NOTE
 # MAKE sure you have saved data of Connection strings from PLanetScale
 HOST="aws.connect.psdb.cloud"
-USERNAME="jdp6urzhmon7fo28pbhc"
-PASSWORD="pscale_pw_jle0vpsf1XbE8LWvaABLC3TvKDYnbKubkX0RYQlvjoS"
+USERNAME="bzkm8162ffn8w9l6nayh"
+PASSWORD="pscale_pw_AExTSeyjJ4E9zHSGW4npQdJFVjkYCFjMz5bMU9srrkM"
 DATABASE="joviancareers"
 
 
@@ -30,9 +30,9 @@ with engine.connect() as conn:
   db_query = "select * from jobs"
   result = conn.execute(text(db_query))
 
-  result_all = result.all()
-  # print(f"Type :{type(result_all)}")
-  print(f"First Element:{result_all[0]} :+\n: Type:{type(result_all[0])}")
+  result_dicts = []
 
-  first_result_dict = result_all[0]._asdict()
-  print(f"checking type whether it is python dict or sql :\n {type(first_result_dict)}")
+for row in result.all():
+  result_dicts.append(row._asdict())
+
+print(result_dicts)
