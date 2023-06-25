@@ -3,7 +3,8 @@ It contains
 
 - JOB listing
 - Form by which one can apply to job
-- Acknowledgedment Page After form Submission 
+- Acknowledgedment Page After form Submission
+- API for data 
 
 # DataBase
   DataBase is made using **[MySQL](https://www.mysql.com/products/workbench/)** and stored at **[PlanetSclae](https://planetscale.com/docs)**
