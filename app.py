@@ -1,6 +1,6 @@
 from flask import Flask 
 from flask import render_template , jsonify , request
-from database import load_jobs_from_db , load_job_from_db_of_id
+from database import load_jobs_from_db , load_job_from_db_of_id , add_application_to_db
 
 
 
@@ -39,6 +39,7 @@ def apply_to_job(id):
   # data = request.args # .args get data from url
   data = request.form
   job = load_job_from_db_of_id(id)
+  add_application_to_db(id , data)
   return render_template("application_submitted.html",application=data , job=job)
 
 

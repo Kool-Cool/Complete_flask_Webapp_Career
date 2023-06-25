@@ -57,4 +57,14 @@ def load_job_from_db_of_id(id):
       return None
     else:
       return rows[0]._asdict()
+
+
+def add_application_to_db(job_id ,application_info ):
+  with engine.connect() as conn:
+    query = text(f"INSERT INTO applications (job_id , full_name , email ,linkedin_url , work_experience , resume_url)  VALUES ({job_id} ,'{application_info['full_name']}' ,'{application_info['email']}' ,'{application_info['linkedin_url']}' ,'{application_info['work_experience']}' ,'{application_info['resume_url']}')")
+
+    conn.execute(query)
     
+   
+    # query =   text(f"INSERT INTO applications (job_id , full_name , email ,linkedin_url , work_experience , resume_url)  VALUES ({job_id} ,{application_info['full_name']} ,{application_info['email']} ,{application_info['linkedin_url']} ,{application_info['work_experience']} ,{application_info['resume_url']})")
+# One issue with the code you provided is that the values being inserted into the database are not enclosed in quotation marks. This can cause issues with the SQL statement, especially if the values being inserted contain spaces or special characters. You can try enclosing the values in single quotation marks
