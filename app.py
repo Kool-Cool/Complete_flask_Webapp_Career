@@ -19,7 +19,7 @@ def hello_word():
   return render_template("home.html",jobs_to_show = jobs)
   
 
-@app.route("/jobs") #API route
+@app.route("/api/jobs") #API route
 def list_jobs():
   jobs = load_jobs_from_db()
   return jsonify(jobs)
@@ -41,6 +41,12 @@ def apply_to_job(id):
   job = load_job_from_db_of_id(id)
   add_application_to_db(id , data)
   return render_template("application_submitted.html",application=data , job=job)
+
+
+@app.route("/api/job/<id>") #Individual JOB listing
+def show_job_json(id):
+  job = load_job_from_db_of_id(id)
+  return jsonify(job)
 
 
 
