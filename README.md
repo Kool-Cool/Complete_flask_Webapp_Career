@@ -22,14 +22,14 @@ CREATE TABLE jobs(
 
 create table applications (
 	id INT not null auto_increment,
-    job_id int not null,
-    full_name varchar(250) not null,
-    email varchar(250) not null,
-    linkedin_url varchar(2000),
-    work_experience varchar(2000),
-    resume_url varchar(500),
-    created_at timestamp default current_timestamp,
-    updated_at timestamp default current_timestamp on update current_timestamp,
-    primary key (id)
+	job_id int not null,
+	full_name varchar(250) not null,
+	email varchar(250) not null,
+	linkedin_url varchar(2000),
+	work_experience varchar(2000),
+	resume_url varchar(500),
+	created_at timestamp default current_timestamp,
+	updated_at timestamp default current_timestamp on update current_timestamp,
+	primary key (id)
 );
 ```
