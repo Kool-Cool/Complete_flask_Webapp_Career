@@ -1,2 +1,6 @@
-# Complete_flask
-flask_webapp , completet till deployment on "render.com"
+# Flask WebAPP
+It contains 
+
+- JOB listing
+- Form by which one can apply to job
+- Acknowledgedment Page After form Submission 
