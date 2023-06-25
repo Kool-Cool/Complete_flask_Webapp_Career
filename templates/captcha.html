@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  #image{
+	margin-top: 10px;
+	box-shadow: 5px 5px 5px 5px gray;
+	width: 60px;;
+	padding: 20px;
+	font-weight: 400;
+	padding-bottom: 0px;
+	height: 40px;
+	user-select: none;
+	text-decoration:line-through;
+	font-style: italic;
+	font-size: x-large;
+	border: red 2px solid;
+	margin-left: 10px;
+	
+}
+#user-input{
+	box-shadow: 5px 5px 5px 5px gray;
+	width:auto;
+	margin-right: 10px;
+	padding: 10px;
+	padding-bottom: 0px;
+	height: 40px;
+	border: red 0px solid;
+}
+input{
+	border:1px black solid;
+}
+.inline{
+	display:inline-block;
+}
+#btn{
+	box-shadow: 5px 5px 5px grey;
+	color: aqua;
+	margin: 10px;
+	background-color: brown;
+}
+</style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet"
+	href="captcha.css">
+	<link rel="stylesheet" href=
+"https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+		integrity=
+"sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+		crossorigin="anonymous">
+	<script src="captcha.js"></script>
+</head>
+
+<body onload="generate()">
+	<div id="user-input" class="inline">
+		<input type="text"
+			id="submit"
+			placeholder="Captcha code" />
+	</div>
+
+	<div class="inline" onclick="generate()">
+		<i class="fas fa-sync"></i>
+	</div>
+
+	<div id="image"
+		class="inline"
+		selectable="False">
+	</div>
+	<input type="submit"
+		id="btn"
+		onclick="printmsg()" />
+
+	<p id="key"></p>
+  <script>
+  let captcha;
+function generate() {
+
+	// Clear old input
+	document.getElementById("submit").value = "";
+
+	// Access the element to store
+	// the generated captcha
+	captcha = document.getElementById("image");
+	let uniquechar = "";
+
+	const randomchar =
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	// Generate captcha for length of
+	// 5 with random character
+	for (let i = 1; i < 5; i++) {
+		uniquechar += randomchar.charAt(
+			Math.random() * randomchar.length)
+	}
+
+	// Store generated input
+	captcha.innerHTML = uniquechar;
+}
+
+function printmsg() {
+	const usr_input = document
+		.getElementById("submit").value;
+
+	// Check whether the input is equal
+	// to generated captcha or not
+	if (usr_input == captcha.innerHTML) {
+		let s = document.getElementById("key")
+			.innerHTML = "Matched";
+		generate();
+	}
+	else {
+		let s = document.getElementById("key")
+			.innerHTML = "not Matched";
+		generate();
+	}
+}
+</script>
+</body>
+</html>
+
+
+
+
