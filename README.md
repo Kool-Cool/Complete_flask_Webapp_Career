@@ -33,3 +33,7 @@ create table applications (
 	primary key (id)
 );
 ```
+
+# Preview
+
+![PREVIEW](https://github.com/Kool-Cool/dump-/blob/main/ezgif.com-gif-maker.gif)
