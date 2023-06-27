@@ -1,3 +1,6 @@
+This project is open for contributions from anyone who is interested. If you want to contribute, please check the GitHub issues page and pick an issue that you can work on. You can also create a new issue if you have an idea or a suggestion. Please follow the code of conduct and the contribution guidelines when submitting your pull requests.
+
+
 # Flask WebAPP
 It contains 
 
