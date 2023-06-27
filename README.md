@@ -1,5 +1,16 @@
 This project is open for contributions from anyone who is interested. If you want to contribute, please check the GitHub issues page and pick an issue that you can work on. You can also create a new issue if you have an idea or a suggestion. Please follow the code of conduct and the contribution guidelines when submitting your pull requests.
 
+To contribute, please follow these steps:
+
+- Fork this repository and clone it to your local machine.
+- Create a new branch with a descriptive name for your changes.
+- Make your changes and commit them with clear and concise messages.
+- Push your branch to your forked repository and create a pull request to the main branch of this repository.
+- Wait for feedback and approval from the maintainers.
+
+Please make sure to follow the code style and conventions of this project, and to test your changes before submitting them.
+
+
 
 # Flask WebAPP
 It contains 
