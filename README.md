@@ -1,3 +1,5 @@
+# Flask Job Board App
+
 ![Star Badge](https://img.shields.io/static/v1?label=%F0%9F%8C%9F&message=If%20Useful&style=style=flat&color=BC4E99)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
 
@@ -51,6 +53,104 @@ create table applications (
 	primary key (id)
 );
 ```
+
+
+
+
+This documentation provides an overview of the Flask Job Board web application. The application serves both HTML pages and API endpoints to list and view job listings. The app also allows users to apply to specific job listings and store their application data.
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Routes](#routes)
+3. [Database](#database)
+4. [Usage](#usage)
+5. [API Endpoints](#api-endpoints)
+6. [Contributing](#contributing)
+7. [License](#license)
+
+## 1. Introduction
+
+The Flask Job Board web application is designed to list job postings, provide detailed information about individual jobs, and allow users to apply to specific jobs. It combines HTML routes for user-friendly pages and API routes to serve job data in JSON format.
+
+## 2. Routes
+
+### Home Route
+
+- **URL**: `/`
+- **Description**: Displays the home page with a list of all available job listings.
+- **Method**: GET
+
+### Job Page Route
+
+- **URL**: `/job/<id>`
+- **Description**: Displays detailed information about a specific job listing.
+- **Method**: GET
+
+### Apply to Job Route
+
+- **URL**: `/job/<id>/apply`
+- **Description**: Allows users to apply to a specific job by submitting their application data.
+- **Method**: POST
+
+## 3. Database
+
+The application uses a database to store job listings and user job applications. The `database.py` file contains the necessary functions to interact with the database, including loading job listings, retrieving individual job details, and adding job applications.
+
+## 4. Usage
+
+1. Clone the repository from GitHub:
+```
+git clone https://github.com/your-username/flask-job-board.git
+```
+
+
+
+2. Navigate to the project directory:
+```
+cd flask-job-board
+```
+
+
+
+3. Install the required dependencies:
+```
+pip install Flask
+```
+
+
+
+4. Run the application:
+```
+python app.py
+```
+
+5. Open your web browser and navigate to `http://localhost:5000/` to access the Job Board app.
+
+## 5. API Endpoints
+
+### List All Jobs
+
+- **URL**: `/api/jobs`
+- **Description**: Returns a JSON array containing all job listings.
+- **Method**: GET
+
+### Show Job Details
+
+- **URL**: `/api/job/<id>`
+- **Description**: Returns a JSON object containing detailed information about a specific job listing.
+- **Method**: GET
+
+## 6. Contributing
+
+Contributions to the Flask Job Board web application are welcome. If you find any issues or have suggestions for improvement, feel free to open an issue or submit a pull request on GitHub.
+
+## 7. License
+
+The Flask Job Board web application is open-source software released under the [MIT License](LICENSE).
+
+---
+This concludes the documentation for the Flask Job Board web application. Thank you for using our Job Board app! 📝🏢
 
 # Preview
 
