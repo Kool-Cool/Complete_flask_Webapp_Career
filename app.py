@@ -49,7 +49,13 @@ def show_job_json(id):
   return jsonify(job)
 
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
+@app.route("/connect")
+def connect():
+    return render_template("connect.html")
 
 
 if __name__ == "__main__":
